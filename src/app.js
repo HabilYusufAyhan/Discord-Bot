@@ -20,7 +20,7 @@ readdirSync("./events").forEach(async file => {
 })
 client.on("ready", () => {
   client.user.setPresence({
-    activities: [{ name: `sahibim beni kodluyor`, type: ActivityType.Playing }],
+    activities: [{ name: `Fikir Ve Önerilerinizi Bekliyor`, type: ActivityType.Watching }],
     status: "dnd",
   });
 });
