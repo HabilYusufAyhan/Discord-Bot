@@ -1,13 +1,10 @@
 import { EmbedBuilder } from "discord.js"
 export default client => {
-    client.on("messageCreate", async (message) => {
-        if (message.content.toLocaleLowerCase() == "atahan") {
-          message.reply("recep ivedik");
-        }
-      });
-      
+   
+      const log = process.env.PREFIX
+      console.log(log);
    client.on("messageCreate" , message => {
-    if (message.content == "bot bilgi") {
+    if (message.content == log) {
         const bilgi = new EmbedBuilder()
          .setAuthor({ name: "Bot Bilgilendirme" , iconURL: client.user.displayAvatarURL()})
          .setDescription("GYBK-GDSC bot , sunucunun düzenini ve işleyişini sağlamak için oluşturulmuş bir discord botudur")

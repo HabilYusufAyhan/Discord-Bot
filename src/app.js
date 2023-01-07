@@ -1,3 +1,5 @@
+import * as dotenv from 'dotenv' 
+dotenv.config()
 import {
   Client,
   GatewayIntentBits,
@@ -24,9 +26,7 @@ client.on("ready", () => {
     status: "dnd",
   });
 });
-client.login(
-  "MTA1OTA4MzgzMDUwNzYwNjA4Nw.GMw_gI.FpRw3VskxCjmRNLoDVeCWX3VF7kswGkqhkgu4w"
-);
+client.login(process.env.TOKEN);
 
 
 
