@@ -4,6 +4,7 @@ import {
   Client,
   GatewayIntentBits,
   ActivityType,
+  Collection,
 } from "discord.js";
 import { readdirSync } from "fs"
 const client = new Client({
@@ -28,7 +29,15 @@ client.on("ready", () => {
 });
 client.login(process.env.TOKEN);
 
+// command loader
 
-
+client.commands = new Collection()
+readdirSync("./commands").forEach(category => {
+   readdirSync(`./commands/${category}`).forEach(async file => {
+     const command = await import(`./commands/${category}/${file}`).then( c => c.default)
+     client.commands.set(command.name,command)
+     
+   })
+})
 
 
