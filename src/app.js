@@ -23,10 +23,11 @@ readdirSync("./events").forEach(async file => {
 })
 client.on("ready", () => {
   client.user.setPresence({
-    activities: [{ name: `Fikir Ve Önerilerinizi Bekliyor`, type: ActivityType.Watching }],
-    status: "dnd",
+    activities: [{ name: `TBD Gencin Duygularıyla`, type: ActivityType.Playing }],
+    status: "online",
   });
 });
+
 client.login(process.env.TOKEN);
 
 // command loader

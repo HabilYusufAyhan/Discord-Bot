@@ -27,5 +27,10 @@ export default client => {
       message.reply('hata var')
      }
    })
+   client.on("messageCreate" , message => {
+    if (message.content == 'atahan') {
+      message.reply('recep ivedik');
+    }
+   })
 
 }
